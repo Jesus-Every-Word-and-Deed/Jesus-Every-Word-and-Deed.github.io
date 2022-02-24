@@ -1262,51 +1262,13 @@ a {
 .cid-sTszGu7fhe .mbr-section-title {
   color: #7f40bf;
 }
-.cid-sSkhZZJ0TK {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: #000000;
-}
-.cid-sSkhZZJ0TK .icons-menu {
-  margin: auto;
-  margin-bottom: 24px;
-}
-.cid-sSkhZZJ0TK .navbar-nav {
-  flex-direction: row;
-  justify-content: center;
-}
-.cid-sSkhZZJ0TK .nav-link {
-  padding: 0 14px;
-  font-weight: 500;
-}
-.cid-sSkhZZJ0TK .mbr-iconfont {
-  color: #ffffff;
-}
-@media (max-width: 690px) {
-  .cid-sSkhZZJ0TK .navbar-nav {
-    flex-direction: column;
-  }
-  .cid-sSkhZZJ0TK .nav-link {
-    padding: 7px 0;
-    text-align: center;
-  }
-}
-.cid-sSkhZZJ0TK a {
-  transition: color .3s;
-}
-.cid-sSkhZZJ0TK a.text-danger:hover,
-.cid-sSkhZZJ0TK a.text-danger:focus,
-.cid-sSkhZZJ0TK a.text-danger.active {
-  color: #f7978f !important;
-  transition: color .3s;
-}
 .cid-sTuEg2hWNX {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: #ffffff;
+  background-color: #000000;
 }
 .cid-sTuEg2hWNX .number-wrap {
-  color: #555555;
+  color: #ffffff;
   text-align: center;
 }
 .cid-sTuEg2hWNX .number {
@@ -1350,6 +1312,9 @@ a {
 }
 .cid-sTuEg2hWNX .icons-menu .soc-item .mbr-iconfont:hover {
   background-color: #6592e6;
+  color: #ffffff;
+}
+.cid-sTuEg2hWNX H3 {
   color: #ffffff;
 }
 .cid-sS45heqSxg {
