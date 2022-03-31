@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Jesus' Every Word and Deed",
-    "currentPage": "Podcast.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "mobirise5",
       "title": "Mobirise 5",
@@ -63,7 +63,7 @@
     "cookiesAlert": false,
     "gdpr": false,
     "uniqCompNum": 128,
-    "versionPublish": "5.6.4",
+    "versionPublish": "5.6.5",
     "screenshot": "screenshot.png",
     "robotsText": "User-agent: *\nDisallow: /cgi-bin\n"
   },
