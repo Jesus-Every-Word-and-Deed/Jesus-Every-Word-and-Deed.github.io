@@ -1,5 +1,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://www.jesuseverywordanddeed.org/index.html</loc>
+		<loc>http://jesuseverywordanddeed.org/index.html</loc>
+	</url>
+	<url>
+		<loc>http://jesuseverywordanddeed.org/theauthor.html</loc>
+	</url>
+	<url>
+		<loc>http://jesuseverywordanddeed.org/thebook.html</loc>
+	</url>
+	<url>
+		<loc>http://jesuseverywordanddeed.org/excerpt.html</loc>
+	</url>
+	<url>
+		<loc>http://jesuseverywordanddeed.org/trailer.html</loc>
+	</url>
+	<url>
+		<loc>http://jesuseverywordanddeed.org/prophecies.html</loc>
+	</url>
+	<url>
+		<loc>http://jesuseverywordanddeed.org/media.html</loc>
+	</url>
+	<url>
+		<loc>http://jesuseverywordanddeed.org/contact.html</loc>
+	</url>
+	<url>
+		<loc>http://jesuseverywordanddeed.org/buythebook.html</loc>
 	</url>
 </urlset>
