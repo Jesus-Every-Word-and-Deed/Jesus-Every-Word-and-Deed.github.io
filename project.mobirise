@@ -34,7 +34,9 @@
         "#3d626c",
         "#8c0404",
         "#996515",
-        "#ee3102"
+        "#ee3102",
+        "#f4f4f4",
+        "#005d2f"
       ]
     },
     "path": "@PROJECT_PATH@",
@@ -75,7 +77,7 @@
     "mbrsiteDomain": "vvrnjeboxi",
     "cookiesAlert": false,
     "gdpr": false,
-    "uniqCompNum": 222,
+    "uniqCompNum": 223,
     "versionPublish": "5.8.9",
     "screenshot": "screenshot.png"
   },
@@ -10930,176 +10932,275 @@
           "_params": {}
         },
         {
-          "alias": false,
+          "alias": "zen2cool-blocks/components",
+          "_isSecondary": true,
+          "typeCompatible": "type",
           "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 1rem)",
-              "padding-bottom": "(@paddingBottom * 1rem)"
-            },
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
             "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            ".mbr-section-subtitle": {
-              "max-width": "800px",
-              "margin": "0 auto 21px auto",
-              "letter-spacing": ".13em",
-              "color": "#FF4712",
-              "text-align": "center"
-            },
-            ".mbr-section-title": {
-              "max-width": "800px",
-              "margin": "0 auto 26.5px auto",
-              "color": "#FAFAFA"
-            },
-            ".mbr-section-btn": {
-              "max-width": "800px",
-              "margin": "0 auto"
-            },
-            ".btn": {
-              "height": "55px",
-              "min-width": "170px",
-              "box-shadow": "none",
-              "margin-top": "0",
-              "&:hover": {
-                "box-shadow": "none"
+              "& when not (@transp)": {
+                "background": "linear-gradient(@angle * 1deg, @bg-value, @color2)"
+              },
+              "& when (@transp)": {
+                "background": "transparent"
               }
             },
-            ".mbr-section-title, .mbr-section-btn": {
-              "text-align": "center",
-              "color": "#000000"
-            }
-          },
-          "_name": "info1",
-          "_sourceTheme": "parkm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"info1\" group=\"Features\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"color\" title=\"Color\" value=\"#F0F0F5\" selected>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background5.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\" mbr-class=\"{'flex-row-reverse' : reverseContent}\">\n            <div class=\"col-12 col-lg-12\">\n                <h3 class=\"mbr-section-subtitle mbr-fonts-style\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-4\" mbr-if=\"showSubtitle\">\n                    <b>NEW PARK</b></h3>\n                <h2 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title, .mbr-section-btn\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\">Click Blue Button <br>Directly Below to Play, or\n<div>Right Click and Save link as\n</div><div>&nbsp;to save locally&nbsp;</div></h2>\n                <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-primary\" href=\"https://jesusoldtestamentprophecies165008-staging.s3.us-east-2.amazonaws.com/public/Jesus_Every_Word_and_Deed_Audio_Excerpt.mp3\" data-app-placeholder=\"Type Text\">Click to Play, or\n<br>Right Click and Save link as\n<br> to save locally&nbsp;</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "tHhktO4g8p",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {},
-          "_anchor": "info1-65"
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
             "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
             },
-            ".content": {
+            ".contenair": {
               "display": "flex",
-              "height": "100px",
-              "justify-content": "center",
+              "flex-direction": "column",
+              "align-items": "center"
+            },
+            "@keyframes spin": {
+              "from": {
+                "transform": "rotateZ(0)"
+              },
+              "to": {
+                "transform": "rotateZ(1turn)"
+              }
+            },
+            ".green-audio-player": {
+              "width": "(@PlaySize * 1px)",
+              "@media (max-width: (@Breakpoint * 1px))": {
+                "width": "300px"
+              },
+              "min-width": "300px",
+              "height": "56px",
+              "box-shadow": "0 4px 16px 0 rgba(0, 0, 0, 0.07)",
+              "display": "flex !important",
+              "justify-content": "space-between",
               "align-items": "center",
-              "img": {
-                "width": "43px",
-                "height": "43px",
-                "object-fit": "cover",
-                "margin-right": "15px"
-              },
-              "p": {
-                "margin": "0"
-              }
+              "padding-left": "24px",
+              "padding-right": "24px",
+              "border-radius": "(@PlayRad * 1px)",
+              "user-select": "none",
+              "background-color": "@PlayerCol",
+              "box-sizing": "border-box",
+              "outline": "none"
             },
-            ".mbr-text": {
-              "color": "#ffffff"
-            }
-          },
-          "_name": "content1",
-          "_sourceTheme": "parkm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"content1\" group=\"Content\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"color\" title=\"Color\" value=\"#ffa41d\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 content\">\n                <img src=\"../_images/logo.png\" alt=\"Mobirise\" mbr-if=\"showImage\">\n                <p class=\"mbr-text mbr-fonts-style\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-7\">\n                    Under Construction / Link below does not play directly</p>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "tHhhXws4bh",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {},
-          "_anchor": "content1-63"
-        },
-        {
-          "_name": "video01",
-          "_sourceTheme": "learnm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"video1\" group=\"Images & Videos\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" plugins=\"PlayerVimeo\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" name=\"fullWidth\" title=\"Full Width\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <header>Video</header>\n        <input type=\"text\" title=\"Link\" name=\"modalVideo\" value=\"https://jesusoldtestamentprophecies165008-staging.s3.us-east-2.amazonaws.com/public/Jesus_Every_Word_and_Deed_Audio_Excerpt.mp3\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input title=\"Image\" type=\"image\" value=\"@PROJECT_PATH@/assets/images/book-cover-high-rez-square-master-1108x1108.png\">\n            <input title=\"Color\" type=\"color\" value=\"#f4f4f4\" selected>\n            <input title=\"Video\" type=\"video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"align-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\n        <div class=\"row justify-content-center\">\n            <div class=\"col-lg-6 m-auto\">\n                <div class=\"mbr-section-head mb-4\">\n                    <h4 class=\"mbr-section-title align-left mbr-fonts-style mb-0\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>Audio Excerpt</b></h4>\n                    <h5 class=\"mbr-section-subtitle align-left mbr-fonts-style mb-0 mt-2\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\">The 59 minute recording covers about the first 15% of the book. It was recorded before the book was printed as this work was originally conceived as a screenplay. Of course no Scripture wording changed, though a few sub-headings were updated for the printed version.&nbsp;</h5>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-6\">\n                <div class=\"box\">\n                    <div class=\"mbr-media show-modal align-center\" data-modal=\".modalWindow\">\n                        <a href=\"https://jesusoldtestamentprophecies165008-staging.s3.us-east-2.amazonaws.com/public/Jesus_Every_Word_and_Deed_Audio_Excerpt.mp3\"><img src=\"@PROJECT_PATH@/assets/images/book-cover-high-rez-square-master-1108x1108.png\" alt=\"Mobirise Website Builder\"></a>\n                        <div class=\"icon-wrap\">\n                            <span mbr-icon class=\"mbr-iconfont socicon-youtube socicon\"></span>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div>\n        <div class=\"modalWindow\" style=\"display: none;\">\n            <div class=\"modalWindow-container\">\n                <div class=\"modalWindow-video-container\">\n                    <div class=\"modalWindow-video\">\n                        <iframe width=\"100%\" height=\"100%\" data-src=\"{{modalVideo}}\" frameborder=\"0\" allowfullscreen=\"1\"></iframe>\n                    </div>\n                    <a class=\"close\" role=\"button\" data-dismiss=\"modal\" data-bs-dismiss=\"modal\">\n                        <span aria-hidden=\"true\" class=\"mbr-iconfont mobi-mbri-close mobi-mbri closeModal\"></span>\n                        <span class=\"sr-only visually-hidden\">Close</span>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_styles": {
-            "padding-top": "(@paddingTop * 1rem)",
-            "padding-bottom": "(@paddingBottom * 1rem)",
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
+            ".green-audio-player.player-accessible .play-pause-btn:hover, .green-audio-player.player-accessible .controls:hover, .green-audio-player.player-accessible .volume__button:hover, .green-audio-player.player-accessible .volume__controls:hover, .green-audio-player.player-accessible .download:hover": {
+              "outline": "dotted 1px #999"
             },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
+            ".green-audio-player svg, .green-audio-player img": {
+              "display": "block"
             },
-            ".mbr-media": {
-              "position": "relative",
-              "img": {
-                "width": "100%",
-                "object-fit": "cover",
-                "border-radius": "2rem"
-              }
+            ".green-audio-player .holder": {
+              "position": "relative"
             },
-            ".icon-wrap": {
-              "left": "50%",
-              "top": "50%",
-              "transform": "translate(-50%, -50%)",
-              "position": "absolute"
-            },
-            ".mbr-media span": {
-              "font-size": "4rem",
-              "transition": "all 0.2s"
-            },
-            ".modalWindow": {
-              "position": "fixed",
-              "z-index": "5000",
-              "left": "0",
-              "top": "0",
-              "background-color": "rgba(61, 61, 61, 0.65)",
-              "width": "100%",
-              "height": "100%",
-              ".modalWindow-container": {
-                "display": "table-cell",
-                "vertical-align": "middle"
-              },
-              ".modalWindow-video": {
-                "height": "calc(80vw / 1.778)",
-                "width": "80vw",
-                "margin": "0 auto"
-              }
-            },
-            ".close": {
-              "position": "fixed",
-              "opacity": "0.5",
-              "font-size": "22px",
-              "font-weight": "300",
-              "width": "60px",
-              "height": "60px",
+            ".green-audio-player .holder .loading .loading__spinner": {
+              "position": "absolute",
+              "left": "-3px",
+              "bottom": "2px",
+              "width": "16px",
+              "height": "16px",
+              "border": "2px solid #b0b0b0",
+              "border-right-color": "rgba(0, 0, 0, 0)",
               "border-radius": "50%",
-              "color": "#fff",
-              "top": "2.5rem",
-              "right": "2.5rem",
-              "border": "2px solid #fff",
-              "text-shadow": "none",
-              "z-index": "5",
-              "transition": "opacity 0.3s ease",
-              "align-items": "center",
-              "justify-content": "center",
-              "display": "flex",
-              "&:hover": {
-                "opacity": "1",
-                "background": "#000",
-                "color": "#fff"
+              "animation": "spin 0.4s linear infinite"
+            },
+            ".green-audio-player .holder .play-pause-btn": {
+              "visibility": "hidden",
+              "cursor": "pointer",
+              "outline": "none",
+              "fill": "@PlPaCol"
+            },
+            ".green-audio-player .holder .play-pause-btn:focus": {
+              "outline": "none"
+            },
+            ".green-audio-player .slider": {
+              "flex-grow": "1",
+              "background-color": "@PinCol2",
+              "cursor": "pointer",
+              "position": "relative"
+            },
+            ".green-audio-player .slider .gap-progress": {
+              "background-color": "@SliderCol",
+              "border-radius": "inherit",
+              "position": "absolute",
+              "pointer-events": "none"
+            },
+            "& when (@Dotonoff)": {
+              ".green-audio-player .slider .gap-progress .pin": {
+                "height": "16px",
+                "width": "16px",
+                "border-radius": "8px",
+                "background-color": "@ProgressCol",
+                "position": "absolute",
+                "pointer-events": "all",
+                "box-shadow": "0 1px 1px 0 rgba(0, 0, 0, 0.32)"
               }
+            },
+            "& when not (@Dotonoff)": {
+              ".green-audio-player .slider .gap-progress .pin": {
+                "height": "16px",
+                "width": "16px",
+                "border-radius": "8px",
+                "background-color": "transparent",
+                "position": "absolute",
+                "pointer-events": "all"
+              }
+            },
+            ".green-audio-player .slider .gap-progress .pin::after": {
+              "content": "\"\"",
+              "display": "block",
+              "background": "rgba(0, 0, 0, 0)",
+              "width": "200%",
+              "height": "200%",
+              "margin-left": "-50%",
+              "margin-top": "-50%",
+              "border-radius": "50%"
+            },
+            ".green-audio-player .controls": {
+              "font-family": "\"Roboto\", sans-serif",
+              "font-size": "16px",
+              "line-height": "18px",
+              "color": "@TimeCol",
+              "display": "flex",
+              "flex-grow": "1",
+              "justify-content": "space-between",
+              "align-items": "center",
+              "margin-left": "15px",
+              "margin-right": "15px",
+              "outline": "none"
+            },
+            ".green-audio-player .controls .controls__slider": {
+              "margin-left": "16px",
+              "margin-right": "16px",
+              "border-radius": "2px",
+              "height": "4px"
+            },
+            ".green-audio-player .controls .controls__slider .controls__progress": {
+              "width": "0",
+              "height": "100%"
+            },
+            ".green-audio-player .controls .controls__slider .controls__progress .progress__pin": {
+              "right": "-8px",
+              "top": "-6px"
+            },
+            ".green-audio-player .controls span": {
+              "cursor": "default"
+            },
+            ".green-audio-player .controls:focus": {
+              "outline": "none"
+            },
+            ".green-audio-player .volume": {
+              "position": "relative"
+            },
+            "& when (@Volumeoff)": {
+              ".green-audio-player .volume_test": {
+                "height": "24px",
+                "width": "24px"
+              }
+            },
+            "& when not (@Volumeoff)": {
+              ".green-audio-player .volume_test": {
+                "height": "0px",
+                "width": "0px"
+              }
+            },
+            ".green-audio-player .volume .volume__button": {
+              "cursor": "pointer",
+              "outline": "none",
+              "fill": "@VolCol"
+            },
+            ".green-audio-player .volume .volume__button:focus": {
+              "outline": "none"
+            },
+            ".green-audio-player .volume .volume__button.open path": {
+              "fill": "@VolumeCol"
+            },
+            ".green-audio-player .volume .volume__controls": {
+              "width": "30px",
+              "height": "135px",
+              "background-color": "@VolColBack",
+              "opacity": "@VolBckCol",
+              "border-radius": "7px",
+              "position": "absolute",
+              "left": "-3px",
+              "bottom": "52px",
+              "flex-direction": "column",
+              "align-items": "center",
+              "display": "flex",
+              "z-index": "2",
+              "outline": "none"
+            },
+            ".green-audio-player .volume .volume__controls .volume__slider": {
+              "margin-top": "12px",
+              "margin-bottom": "12px",
+              "width": "6px",
+              "border-radius": "3px"
+            },
+            ".green-audio-player .volume .volume__controls .volume__slider .volume__progress": {
+              "bottom": "0",
+              "height": "100%",
+              "width": "6px"
+            },
+            ".green-audio-player .volume .volume__controls .volume__slider .volume__progress .volume__pin": {
+              "left": "-5px",
+              "top": "-8px"
+            },
+            ".green-audio-player .volume .volume__controls:focus": {
+              "outline": "none"
+            },
+            ".green-audio-player .volume .volume__controls.hidden": {
+              "display": "none"
+            },
+            ".green-audio-player .volume .volume__controls.top": {
+              "bottom": "52px",
+              "left": "-3px"
+            },
+            ".green-audio-player .volume .volume__controls.middle": {
+              "bottom": "-54px",
+              "left": "54px"
+            },
+            ".green-audio-player .volume .volume__controls.bottom": {
+              "bottom": "-164px",
+              "left": "-3px"
+            },
+            ".green-audio-player .download__link": {
+              "fill": "@DownCol"
+            },
+            ".green-audio-player .download": {
+              "display": "none",
+              "margin-left": "16px",
+              "cursor": "pointer",
+              "outline": "none",
+              "fill": "@DownCol"
+            },
+            ".green-audio-player .download:focus": {
+              "outline": "none"
+            },
+            ".green-audio-player:focus": {
+              "outline": "none"
+            },
+            ".message__offscreen": {
+              "border": "0",
+              "clip": "rect(1px, 1px, 1px, 1px)",
+              "clip-path": "inset(50%)",
+              "height": "1px",
+              "margin": "-1px",
+              "overflow": "hidden",
+              "padding": "0",
+              "position": "absolute",
+              "width": "1px",
+              "word-wrap": "normal"
+            },
+            ".hidden": {
+              "display": "none"
             }
           },
-          "_cid": "tHgMQoOmBM",
+          "_name": "audiobar",
+          "_sourceTheme": "parkm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"mbr-section\" plugins=\"audiobar\" group=\"Zen2cool Blocks\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n      <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n\t\n\t <header>Player ID</header>\n\t\t        <input type=\"range\" inline title=\"Player ID (must be unique in each audio block on page)\" name=\"NumberPlayer\" min=\"1\" max=\"100\" step=\"1\" value=\"1\">v\n\t\t\n\t\t <header>Basic Settings</header>\n\t\t\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" value=\"5\" step=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n                <input type=\"checkbox\" title=\"Texte\" name=\"showSubtxt\" checked>\n\n <header>Player Config</header>\n        <input type=\"range\" inline title=\"Player Width\" name=\"PlaySize\" min=\"300\" max=\"1000\" step=\"1\" value=\"493\">\n                <input type=\"range\" inline title=\"Player Radius\" name=\"PlayRad\" min=\"0\" max=\"100\" step=\"1\" value=\"38\">\n                       <input type=\"range\" inline title=\"Player Size Breakpoint\" name=\"Breakpoint\" min=\"500\" max=\"1500\" step=\"25\" value=\"900\">\n        <input type=\"color\" title=\"Player Color\" name=\"PlayerCol\" value=\"#0021a6\">\n        <select title=\"Position\" name=\"Positionpl\">\n        <option value=\"star\">Left</option>\n        <option value=\"center\" selected>Center</option>\n         <option value=\"end\">Right</option>\n        </select>\n\n       <header>Buttons Color</header>\n        <input type=\"color\" title=\"Play/Pause Button\" name=\"PlPaCol\" value=\"#ffffff\">\n                   <input type=\"checkbox\" title=\"Volume On/Off\" name=\"Volumeoff\" checked>\n         <input type=\"color\" title=\"Volume Button\" name=\"VolCol\" value=\"#ffffff\" condition=\"Volumeoff\">\n         <input type=\"color\" title=\"Volume Push Color\" name=\"VolumeCol\" value=\"#000000\" condition=\"Volumeoff\">  \n\t\t <input type=\"color\" title=\"Background Volume\" name=\"VolColBack\" value=\"#005d2f\" condition=\"Volumeoff\">\n        <input type=\"range\" inline title=\"Vol Background Opacity\" name=\"VolBckCol\" min=\"0\" max=\"1\" step=\"0.1\" value=\"1\" condition=\"Volumeoff\">\n        <input type=\"color\" title=\"Slider Color\" name=\"SliderCol\" value=\"#ffffff\">\n        <input type=\"color\" title=\"Progress Color\" name=\"PinCol2\" value=\"#000000\">\n           <input type=\"checkbox\" title=\"Dot On/Off\" name=\"Dotonoff\" checked>\n        <input type=\"color\" title=\"Dot Progress Color\" name=\"ProgressCol\" value=\"#8c0404\" condition=\"Dotonoff\">\n        <input type=\"color\" title=\"Time Color\" name=\"TimeCol\" value=\"#ffffff\">\n                <header>Download Button</header>  \n        <select title=\"Download Button\" name=\"Downbutton\">\n        <option value=\"player-with-download\" selected>On</option>\n        <option value=\"player\">Off</option>\n        </select>\n         <input type=\"color\" title=\"Download Color\" name=\"DownCol\" value=\"#f0f0f5\" condition=\"Downbutton == 'player-with-download'\">\n       \n        \n<header>Audio URL</header>\n            <input type=\"text\" title=\"Audio URL\" name=\"audioSrc\" value=\"https://jesusoldtestamentprophecies165008-staging.s3.us-east-2.amazonaws.com/public/Jesus_Every_Word_and_Deed_Audio_Excerpt.mp3\">\n            <input type=\"checkbox\" title=\"Loop\" name=\"loopoption\">\n            <input type=\"checkbox\" title=\"Autoplay\" name=\"Autoplay\">\n                    <select title=\"Preload\" name=\"PreLoad\">\n        <option value=\"auto\">On</option>\n        <option value=\"metadata\" selected>Metadata</option>\n               </select>\n                \n                        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/lionaf.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#f4f4f4\" selected>\n\n        </fieldset>\n                \n         <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#f4f4f4\" condition=\"bg.type == 'color'\">\n         <input type=\"range\" name=\"angle\" title=\"Angle\" min=\"0\" max=\"270\" value=\"0\" step=\"1\" condition=\"bg.type == 'color'\">\n\t\t <input type=\"checkbox\" title=\"Background Transparent\" name=\"transp\" condition=\"bg.type == 'color'\">\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0\" condition=\"overlay && bg.type !== 'color'\">\n        \n           \n    <!-- End block parameters -->\n    </mbr-parameters>\n       <div class=\"mbr-overlay\" mbr-if=\"overlay&&bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\">\n    </div>\n    \n    <div class=\"row justify-content-center\">\n            <div class=\"col-md-12 col-lg-{{textWidth}}\">\n                <h3 class=\"mbr-section-title mbr-fonts-style mb-4\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\"><b>Audio Excerpt</b></h3>\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                    Readers Theater Version</h4>\n                <p class=\"mbr-text mbr-fonts-style\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-1\" mbr-if=\"showSubtxt\">\n                    The 59 minute recording covers about the first 15% of the book. It was recorded before the book was printed as this work was originally conceived as a screenplay. Of course no Scripture wording changed, though a few sub-headings were updated for the printed version.<br><br><i><a href=\"https://jesusoldtestamentprophecies165008-staging.s3.us-east-2.amazonaws.com/public/Jesus_Every_Word_and_Deed_Audio_Excerpt.mp3\" class=\"text-primary\">Right Click here or on the Download icon in the player below and say save link as if you would like an offline copy.</a></i></p>\n            </div>\n        </div>\n\n<div class=\"contenair\">\n<div class=\"ready-player-{{NumberPlayer}} {{Downbutton}}\">\n        <audio crossorigin preload=\"PreLoad\" loop=\"{{loopoption}}\" autoplay=\"{{Autoplay}}\">\n            <source src=\"{{audioSrc}}\" type=\"audio/mpeg\">\n            <source src=\"{{audioSrc}}\" type=\"audio/ogg\">\n            <source src=\"{{audioSrc}}\" type=\"audio/wav\">\n        </audio>\n   \n <script mbr-if=\"NumberPlayer == 1\">\n        document.addEventListener('DOMContentLoaded', function() {\n            GreenAudioPlayer.init({\n                selector: '.player',\n                stopOthersOnPlay: true\n            });\n\n            GreenAudioPlayer.init({\n                selector: '.player-with-download',\n                stopOthersOnPlay: true,\n                showDownloadButton: true,\n                enableKeystrokes: true\n            });\n\n            GreenAudioPlayer.init({\n                selector: '.player-with-accessibility',\n                stopOthersOnPlay: true,\n                enableKeystrokes: true\n            });\n        });\n    </script>\n   </div>\n </div>\n<div mbr-class=\"{'hidden': isPublish}\" style=\"padding:rem; background-color:#c1c1c1;\">\n   <div class=\"align-center\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" xml:space=\"preserve\" width=\"800px\" height=\"267px\" version=\"1.1\" style=\"shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd\" viewBox=\"0 0 800 266.67\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n <g id=\"Plan_x0020_1\">\n  <metadata id=\"CorelCorpID_0Corel-Layer\"></metadata>\n  <rect fill=\"{{PlayerCol}}\" x=\"27.27\" y=\"118.39\" width=\"653.97\" height=\"77.23\"></rect>\n  <rect mbr-if=\"Volumeoff\" fill=\"{{VolColBack}}\" opacity=\"{{VolBckCol}}\" x=\"696.04\" y=\"55.95\" width=\"65.73\" height=\"203.75\"></rect>\n  <polygon fill=\"{{PlPaCol}}\" points=\"77.28,154.27 64.16,163.12 51.05,171.98 51.05,154.27 51.05,136.56 64.16,145.41 \"></polygon>\n  <text x=\"94.71\" y=\"160.77\" fill=\"{{TimeCol}}\">00:00</text>\n  <text x=\"487.29\" y=\"160.77\" fill=\"{{TimeCol}}\">00:00</text>\n  <rect fill=\"{{SliderCol}}\" x=\"147.72\" y=\"152.39\" width=\"156.97\" height=\"3.76\"></rect>\n  <rect fill=\"{{PinCol2}}\" x=\"317.45\" y=\"152.39\" width=\"157.87\" height=\"3.76\"></rect>\n  <circle mbr-if=\"Dotonoff\" fill=\"{{ProgressCol}}\" cx=\"311.75\" cy=\"154.52\" r=\"13.12\"></circle>\n  <polygon mbr-if=\"Volumeoff\" fill=\"{{VolumeCol}}\" points=\"712.37,13.16 728.5,13.16 739.59,5.94 739.62,24.21 739.65,42.48 729.94,35.26 712.37,35.26 \"></polygon>\n  <rect mbr-if=\"Volumeoff\" fill=\"{{SliderCol}}\" transform=\"matrix(2.64845E-14 -0.803535 1 2.12813E-14 726.013 242.808)\" width=\"118.55\" height=\"5.77\"></rect>\n  <rect mbr-if=\"Volumeoff\" fill=\"{{PinCol2}}\" transform=\"matrix(2.64845E-14 -0.57436 1 1.52117E-14 726.013 135.441)\" width=\"118.55\" height=\"5.77\"></rect>\n  <circle mbr-if=\"Dotonoff\" fill=\"{{ProgressCol}}\" cx=\"728.76\" cy=\"139.54\" r=\"13.12\"></circle>\n  <g>\n   <path mbr-if=\"Downbutton == 'player-with-download'\" fill=\"{{DownCol}}\" d=\"M623.81 159.65l0 -25.53 1.07 0 0 25.53 -1.07 0zm0.53 11.01l-5.8 -11.61 11.61 0 -5.81 11.61z\"></path>\n  </g>\n  <polygon mbr-if=\"Volumeoff\" fill=\"{{VolCol}}\" points=\"546.22,142.66 562.35,142.66 573.45,135.44 573.47,153.71 573.5,171.98 563.79,164.76 546.22,164.76 \"></polygon>\n </g>\n     </svg>\n              <br><br><h10>Click the \"gear\" icon to customize the Player Bar. <br> <br> The player will appear when viewing or publishing <br><strong>but work only when you publish on the FTP server</strong><br><br> This text will be removed on preview/publish.<br><br>Original script https://codepen.io/gregh </h10>\n    </div></div>\n</section>",
+          "_cid": "tHrFgLvRrO",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
           "_params": {},
-          "_anchor": "video01-62"
+          "_anchor": "audiobar-66"
         }
       ]
     }
