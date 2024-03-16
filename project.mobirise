@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Jesus_Every_Word_And_Deed",
-    "currentPage": "prophecies.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "parkm5",
       "title": "ParkM5",
@@ -78,7 +78,7 @@
     "cookiesAlert": false,
     "gdpr": false,
     "uniqCompNum": 225,
-    "versionPublish": "5.9.8",
+    "versionPublish": "5.9.17",
     "screenshot": "screenshot.png",
     "usedWebp": true
   },
