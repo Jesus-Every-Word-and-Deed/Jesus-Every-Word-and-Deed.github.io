@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Jesus_Every_Word_And_Deed",
-    "currentPage": "buythebook.html",
+    "currentPage": "theauthor.html",
     "theme": {
       "name": "parkm5",
       "title": "ParkM5",
@@ -77,7 +77,7 @@
     "mbrsiteDomain": "wlzuoilkbo",
     "cookiesAlert": false,
     "gdpr": false,
-    "uniqCompNum": 227,
+    "uniqCompNum": 230,
     "versionPublish": "5.9.17",
     "screenshot": "screenshot.png",
     "usedWebp": true
@@ -1690,10 +1690,8 @@
           "_params": {}
         },
         {
-          "_name": "features12",
-          "_sourceTheme": "ergom5",
+          "alias": false,
           "_styles": {
-            "overflow": "hidden",
             "& when not (@fullScreen)": {
               "padding-top": "(@paddingTop * 1rem)",
               "padding-bottom": "(@paddingBottom * 1rem)"
@@ -1704,74 +1702,37 @@
             "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
             },
-            "& when (@reverseContent)": {
-              ".row": {
-                "flex-direction": "row-reverse"
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
               }
             },
-            ".container-fluid": {
-              "padding": "0"
+            ".row": {
+              "flex-direction": "row-reverse"
             },
-            ".content-wrapper": {
-              ".text": {
-                "padding": "100px 2rem",
-                "@media (min-width: 768px)": {
-                  "padding": "145px 60px"
-                },
-                "@media (min-width: 1200px)": {
-                  "padding": "140px 130px"
-                },
-                "@media (min-width: 1400px)": {
-                  "padding": "200px 190px"
-                }
-              },
-              ".text-wrapper": {},
-              ".image": {
-                "padding": "60px 2rem",
-                "background-color": "@cardColor",
-                "@media (min-width: 768px)": {
-                  "padding": "200px 60px"
-                },
-                "@media (min-width: 1200px)": {
-                  "padding": "140px 120px"
-                },
-                "@media (min-width: 1400px)": {
-                  "padding": "140px 190px"
-                }
-              },
-              ".image-wrapper": {
-                "height": "100%",
-                "img": {
-                  "width": "100%",
-                  "height": "100%",
-                  "object-fit": "cover"
-                }
-              }
-            },
-            ".display-4 > .mbr-iconfont": {
-              "font-size": "11.6px",
-              "margin-left": "10px"
-            },
-            ".mbr-iconfont": {
-              "font-weight": "700",
-              "padding": "1rem",
-              "border-radius": "50%",
-              "transition": "background 0.5s ease-in-out"
-            },
-            ".link-title:hover": {
-              ".mbr-iconfont": {
-                "background": "#FFFF27"
-              }
+            ".mbr-description": {
+              "text-align": "left"
             }
           },
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features12\" group=\"Features\" mbr-class=\"{'mbr-fullscreen': fullScreen,'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" name=\"showLinks\" title=\"Link\">\n        <input type=\"color\" title=\"Card Color\" name=\"cardColor\" value=\"#f0f0f0\" selected>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1-1.jpg\" parallax>\n            <input type=\"color\" title=\"Color\" value=\"#fafafa\" selected>\n        </fieldset>\n        <input type=\"text\" title=\"Fallback Image\" name=\"videoToImageOnMobile\" condition=\"overlay && bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffff4f\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\" video-to-image-on-mobile=\"{{videoToImageOnMobile}}\">\n        <div class=\"content-wrapper\">\n            <div class=\"row\">\n                <div class=\"col-12 col-md-6 col-lg-6 d-flex align-items-center image\">\n                    <div class=\"image-wrapper\">\n                        <img src=\"@PROJECT_PATH@/assets/images/book%20cover%20high%20rez%20square%20master-1108x1108.png\" alt=\"Mobirise Website Builder\">\n                    </div>\n                </div>\n                <div class=\"col-12 col-md-6 col-lg-6 text\">\n                    <div class=\"text-wrapper\">\n                        <h5 class=\"card-title mbr-fonts-style mb-5\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title\">The&nbsp; Author</h5>\n                        <h6 class=\"card-subtitle mbr-fonts-style mb-5\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".card-subtitle\"><b>John C. Burkhalter</b></h6>\n                        <p class=\"mbr-text mbr-fonts-style mb-0\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .link-title\">John C. Burkhalter describes himself simply as \"an imperfect but dedicated follower of Jesus Christ for almost 50 years\". During that time he has particularly and intensely studied Jesus' words and deeds as found in the four Gospel books.&nbsp; He has been active in teaching, leadership and governance roles of several churches, and for a time after retiring as president of THI Holding Company, a Nationwide&nbsp; Insurance subsidiary, he evaluated the effectiveness and finances of Christian ministries worldwide for prospective donors. He spent the next 14 years assembling the scriptural weaving and associated parts of the book “Jesus Every Word and Deed,” subtitled “Woven From the Scriptures,” as well as a companion book of the same name but subtitled “Readers Theatre Version” for potential role - play and/or screenplay use.<br><br>Burkhalter considers himself not as the author of these books, but as the \"word-weaver\", because \"the words are all from scripture and therefore God The Author\".&nbsp;</p>\n                        <h5 class=\"link-title mbr-fonts-style mt-5\" mbr-theme-style=\"display-4\" data-app-selector=\".link-title\" mbr-if=\"showLinks\">\n                            <a href=\"index.html\" class=\"text-black\">LEARN MORE</a><span class=\"mbri-right mbr-iconfont\"></span>\n                        </h5>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_anchor": "features12-5q",
-          "_isUserblock": true,
-          "_cid": "tlp0GmLKqG",
+          "_name": "image1",
+          "_sourceTheme": "buildm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"buildm5 image1\" group=\"Image & Video\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"1\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"12\" step=\"1\" value=\"10\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/book%20cover%20high%20rez%20square%20master-1108x1108.png\">\n      <input type=\"color\" title=\"Color\" value=\"#fafafa\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/buildm5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 col-lg-{{textWidth}}\">\n        <div class=\"image-wrapper\">\n          <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/book%20cover%20high%20rez%20square%20master-1108x1108.png\" alt=\"Mobirise Website Builder\">\n        </div>\n        <h4 class=\"mbr-description mbr-fonts-style mt-4 align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-description\">\n          <b>Title</b>\n        </h4>\n        <p class=\"mbr-description mbr-fonts-style mt-2 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-description\"><br>John C. Burkhalter describes himself simply as \"an imperfect but dedicated follower of Jesus Christ for almost 50 years\". During that time he has particularly and intensely studied Jesus' words and deeds as found in the four Gospel books.  He has been active in teaching, leadership and governance roles of several churches, and for a time after retiring as president of THI Holding Company, a Nationwide  Insurance subsidiary, he evaluated the effectiveness and finances of Christian ministries worldwide for prospective donors. He spent the next 14 years assembling the scriptural weaving and associated parts of the book “Jesus Every Word and Deed,” subtitled “Woven From the Scriptures,” as well as a companion book of the same name but subtitled “Readers Theatre Version” for potential role - play and/or screenplay use.\n<br>\n<br>Burkhalter considers himself not as the author of these books, but as the \"word-weaver\", because \"the words are all from scripture and therefore God is The Author\".&nbsp;</p>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "uw1ERNhYiN",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {}
+          "_params": {},
+          "_anchor": "image1-6c"
         }
       ]
     },
