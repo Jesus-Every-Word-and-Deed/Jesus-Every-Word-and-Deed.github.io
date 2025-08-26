@@ -9,9 +9,6 @@
 		<loc>http://jesuseverywordanddeed.org/thebook.html</loc>
 	</url>
 	<url>
-		<loc>http://jesuseverywordanddeed.org/excerpt.html</loc>
-	</url>
-	<url>
 		<loc>http://jesuseverywordanddeed.org/trailer.html</loc>
 	</url>
 	<url>
@@ -28,5 +25,8 @@
 	</url>
 	<url>
 		<loc>http://jesuseverywordanddeed.org/page9.html</loc>
+	</url>
+	<url>
+		<loc>http://jesuseverywordanddeed.org/introduction.html</loc>
 	</url>
 </urlset>
